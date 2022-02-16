@@ -1,10 +1,10 @@
 <div class="container" *ngIf="users.length>0;">
   <div class="container-ciclo"*ngFor = "let user of users">
-<h1>
-  <span>{{user.id}}</span>
-  <img class="avatar"src={{user.profilePhotoUrl}}>
-  {{user.name}}{{user.surname}}
-  <span>{{user.age}} {{user.address.city}}</span>
-</h1>
+<div class="user">
+      <p class="id">{{user.id}}</p>
+      <img class="avatar"src={{user.profilePhotoUrl}}>
+  <h3>{{user.name}} {{user.surname}} </h3>
+  <p>{{user.age}} {{user.address.city}}</p>
+</div>
   </div>
 </div>

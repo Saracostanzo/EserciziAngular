@@ -1,4 +1,23 @@
 .avatar{
-  height: 50px;
-  width: 50px;
+  border-radius: 5px;
+  height: 60px;
+  width: 70px;
+}
+.container-ciclo{
+display: grid;
+padding: 10px;
+}
+.user{
+  display: inline-flex;
+  align-items: center;
+}
+.id{
+  width: 40px;
+}
+p{
+  margin-right: 5px;
+}
+h3{
+  margin-left: 5px;
+  margin-right: 5px;
 }
