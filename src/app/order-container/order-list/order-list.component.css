@@ -1,0 +1,38 @@
+.container-root{
+  padding-left: 15px;
+  padding-right: 15px;
+display: grid;
+row-gap: 10px;
+
+}
+.container-component{
+  display: inline-flex;
+}
+.container-layout{
+  padding: 20px;
+  padding-top: 0px;
+  display: grid;
+  background-color: rgb(233, 148, 148);
+  border: 1px solid brown;
+}
+.lista{
+  text-align: center;
+}
+.card-body{
+  display: grid;
+  height: 100px;
+  align-items: center;
+  justify-items: center;
+}
+.ordine{
+text-align: center;
+}
+.card-bodyU{
+width: 300px;
+  background-color: rgba(203, 157, 247, 0.205);
+  border: 1px solid rgb(119, 45, 119);
+}
+.card-bodyO{
+  background-color: rgba(62, 164, 223, 0.205);
+  border: 1px solid rgb(83, 69, 207);
+}

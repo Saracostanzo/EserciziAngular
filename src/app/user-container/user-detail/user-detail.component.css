@@ -1,0 +1,17 @@
+.card-container{
+  margin-left: 20px;
+  height: 480px;
+  width: 300px;
+  background-color: rgb(189, 151, 224);
+  }
+  .container-title{
+    display: grid;
+    justify-items: center;
+  }
+.card-element{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  border: transparent;
+  margin: 20px;
+}

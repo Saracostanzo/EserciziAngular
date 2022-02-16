@@ -1,0 +1,11 @@
+.container-components{
+  display:inline-flex
+}
+.titolo{
+  text-align: center;
+  padding: 5px;
+}
+.layout{
+  background-color: rgb(233, 191, 141);
+  padding: 20px;
+}
