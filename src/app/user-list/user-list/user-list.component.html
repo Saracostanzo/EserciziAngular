@@ -1,2 +1,7 @@
 
-<esercizi-single [users]="users" (deleted)="selectProject($event)"></esercizi-single>
+<esercizi-single  *ngIf="users.length>0; else noUsers" [users]="users" (deleted)="selectProject($event)"></esercizi-single>
+
+
+<ng-template #noUsers>
+  <p>Non sono presenti utenti</p>
+</ng-template>
