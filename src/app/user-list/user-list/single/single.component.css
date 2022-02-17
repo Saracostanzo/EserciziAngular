@@ -10,6 +10,8 @@ padding: 10px;
 .user{
   display: inline-flex;
   align-items: center;
+  width: fit-content;
+  padding:5px;
 }
 .id{
   width: 40px;
@@ -21,3 +23,12 @@ h3{
   margin-left: 5px;
   margin-right: 5px;
 }
+.borderBlue{
+  border: 1px solid blue;
+   }
+   .borderRed{
+    border: 1px solid red;
+     }
+     .borderYellow{
+      border: 1px solid yellow;
+       }

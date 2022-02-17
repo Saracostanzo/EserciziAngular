@@ -1,7 +1,11 @@
 <div class="container">
   <div class="container-ciclo"*ngFor = "let user of users">
-<div class="user">
-      <p class="id">{{user.id}}</p>
+<div class="user"[ngClass] ="{
+  'borderYellow': user.role === 'staff',
+  'borderRed': user.role ==='manager',
+  'borderBlue': user.role==='admin'
+}">
+      <p class="id m-5">{{user.id}}</p>
       <img class="avatar"src={{user.profilePhotoUrl}}>
   <h3>{{user.name}} {{user.surname}} </h3>
   <p>{{user.age}} {{user.address.city}}</p>
