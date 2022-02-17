@@ -9,6 +9,8 @@ import { Role } from 'src/app/model/user';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
+  selectedProject!:User;
+
 users:User[]=[
     {
         id: 3487,
@@ -64,5 +66,10 @@ users:User[]=[
 
   ngOnInit(): void {
   }
-
+  selectProject(user:User){
+    let id;
+    id = (single: User) => single.id === user.id;
+    const idSelezionato = this.users.findIndex(id);
+    this.users.splice(idSelezionato, 1);
+  }
 }
