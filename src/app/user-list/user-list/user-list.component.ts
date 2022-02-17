@@ -4,11 +4,11 @@ import { Gender } from 'src/app/model/user';
 import { Role } from 'src/app/model/user';
 
 @Component({
-  selector: 'esercizi-user-detail',
-  templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.css']
+  selector: 'esercizi-user-list',
+  templateUrl: './user-list.component.html',
+  styleUrls: ['./user-list.component.css']
 })
-export class UserDetailComponent implements OnInit {
+export class UserListComponent implements OnInit {
 users:User[]=[
     {
         id: 3487,
