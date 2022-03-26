@@ -8,19 +8,16 @@ import { User } from 'src/app/models/user';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  @Input() users:User[]=[];
-  @Input()orders:Order[]=[];
-  @Output()sectedNrOrd= new EventEmitter<Order>();
-  @Output() selected= new EventEmitter<User>();
+  @Input() users: User[] = [];
+  @Output() selectedUser = new EventEmitter<User>();
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
-  select(user:User){
-    this.selected.emit(user);
-  }
-  selectNrOrd(order:Order){
-    this.sectedNrOrd.emit(order);
+
+  select(user: User) {
+    this.selectedUser.emit(user);
   }
 
 }

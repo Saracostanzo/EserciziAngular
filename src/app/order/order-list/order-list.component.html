@@ -1,0 +1,26 @@
+<div class="card card-element">
+<h5 class="title">Lista Ordini</h5>
+<div class="single-component-order">
+<div class="card-order">
+<esercizi-card-single *ngFor="let order of orders" >
+  <ng-container data-body>
+      <h5 class="badge bg-secondary  rounded-pill">Ordine Nr.{{ order.ordineN }} <span>{{ order.costo}}</span> </h5>
+  </ng-container>
+      <ng-container data-footer>
+      <p class="card-text"><span>{{order.panino }},{{order.dolce }},{{order.bevande }} </span></p>
+    </ng-container>
+</esercizi-card-single>
+</div>
+<div class="card-user">
+<esercizi-card-single *ngFor = "let user of users">
+  <ng-container data-body>
+    <h5 class="card-title">{{ user.nome}} {{user.cognome}}</h5>
+  </ng-container>
+  <ng-container data-footer>
+    <button class="btn btn-light btn-sm" (click)="select(user)">Visualizza dettagli</button>
+  </ng-container>
+      </esercizi-card-single>
+    </div>
+  </div>
+</div>
+

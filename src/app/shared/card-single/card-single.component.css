@@ -1,0 +1,21 @@
+.card-body{
+  display: grid;
+  width: 100%;
+  align-items:  center;
+  justify-items: center;
+  background-color: rgba(131, 100, 160, 0.205);
+  border: 1px solid rgb(119, 45, 119);
+  border-bottom: unset;
+}
+.card-footer{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-color: rgba(131, 100, 160, 0.205);
+  border: 1px solid rgb(119, 45, 119);
+  border-top: unset;
+}
+.card-title{
+  text-align: center;
+}
+

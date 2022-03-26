@@ -1,0 +1,23 @@
+ .centre{
+   display: inline-flex;
+  width: 100%;
+}
+.div{
+  width: 100%;
+  display: grid;
+  justify-items: center;
+}
+.border{
+  border: 1px solid rgb(82, 78, 78);
+  border-radius: 10px;
+  margin: 10px;
+}
+.left{
+  display: grid;
+  margin-left: 5px;
+}
+.dimens{
+  align-self: center;
+  width: 50px;
+  height: 50px;
+}

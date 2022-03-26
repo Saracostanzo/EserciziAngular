@@ -1,4 +1,4 @@
-import{Order} from "./order";
+
 export interface User {
   nome: string,
   cognome: string,

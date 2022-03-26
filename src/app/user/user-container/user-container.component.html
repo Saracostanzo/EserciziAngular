@@ -1,0 +1,21 @@
+<ng-container *ngIf="(users$ | async) as users; else loading">
+  <div class="layout">
+    <h5 class="interfacciaU">Interfaccia Utente</h5>
+    <div class="users-container">
+    <esercizi-user-list
+    *ngIf="users.length > 0 ; else noProjects"
+          [users]="users"
+          (selectedUser)="selectUser($event)">
+    </esercizi-user-list>
+    </div>
+    </div>
+</ng-container>
+
+
+<ng-template #loading>
+  <h1>Loading...</h1>
+</ng-template>
+
+<ng-template #noProjects>
+  <p>Non è presente nessun progetto</p>
+</ng-template>

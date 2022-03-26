@@ -1,0 +1,26 @@
+<div class="column">
+  <div class=" card card-container">
+    <div class="container-title">
+    <h5 class="title">Dettagli Cliente</h5>
+  </div>
+  <ng-container *ngIf="users$ | async as user; else loading">
+    <div class="card-element">
+    <esercizi-card-single>
+      <ng-container data-body>
+        <h5 class="badge bg-secondary  rounded-pill"> Nr.Ordine:{{user.order}} </h5>
+        <h5 class="card-title">{{ user.nome}} {{user.cognome}} </h5>
+        <p class="card-text">{{ user.citta | uppercase}} </p>
+         <p class="card-text">{{user.via }}</p>
+      </ng-container>
+      <ng-container data-footer>
+        <h5>{{ user.orario}}</h5>
+        <button class="btn btn-light btn-sm" routerLink="/user"> Torna alla lista</button>
+      </ng-container>
+   </esercizi-card-single>
+    </div>
+  </ng-container>
+  </div>
+  </div>
+  <ng-template #loading>
+    <h1>Loading...</h1>
+  </ng-template>

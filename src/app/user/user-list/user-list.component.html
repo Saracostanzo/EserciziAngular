@@ -1,0 +1,11 @@
+<div class="card card-element"*ngIf= "users.length>0;" >
+    <h5 class="title">Lista Clienti</h5>
+    <esercizi-card-single *ngFor = "let user of users">
+<ng-container data-body>
+  <h5 class="card-title">{{ user.nome}} {{user.cognome}}</h5>
+</ng-container>
+<ng-container data-footer>
+  <button class="btn btn-light btn-sm" (click)="select(user)">Visualizza dettagli</button>
+</ng-container>
+    </esercizi-card-single>
+  </div>

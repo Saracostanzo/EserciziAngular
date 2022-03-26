@@ -2,11 +2,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { UserContainerComponent } from './user-container/user-container/user-container.component';
-import { OrderContainerComponent } from './order-container/order-container/order-container.component';
-import { UserListComponent } from './user-container/user-list/user-list.component';
-import { UserDetailComponent } from './user-container/user-detail/user-detail.component';
-import { OrderListComponent } from './order-container/order-list/order-list.component';
+import { UserContainerComponent } from './user/user-container/user-container.component';
+import { OrderContainerComponent } from './order/order-container/order-container.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { OrderListComponent } from './order/order-list/order-list.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { ErrorComponent } from './error/error.component';
+import { AppRoutingModule } from './app.routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './data.service';
+import { CardSingleComponent } from './shared/card-single/card-single.component';
+
 
 @NgModule({
   declarations: [
@@ -15,12 +22,17 @@ import { OrderListComponent } from './order-container/order-list/order-list.comp
     OrderContainerComponent,
     UserListComponent,
     UserDetailComponent,
-    OrderListComponent
+    OrderListComponent,
+    NavbarComponent,
+    ErrorComponent,
+    CardSingleComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

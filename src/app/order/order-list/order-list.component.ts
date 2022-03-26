@@ -1,8 +1,8 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output,  } from '@angular/core';
 import { Order } from 'src/app/models/order';
-import { TitleObj } from 'src/app/models/title';
+
 import { User } from 'src/app/models/user';
-import { UserContainerComponent } from 'src/app/user-container/user-container/user-container.component';
+
 
 @Component({
   selector: 'esercizi-order-list',
@@ -13,12 +13,14 @@ import { UserContainerComponent } from 'src/app/user-container/user-container/us
 export class OrderListComponent implements OnInit {
   @Input() orders:Order[]=[];
   @Input()users:User[]=[];
-  @Input()titles:TitleObj[]=[];
+  @Output() selectedUser = new EventEmitter<User>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  select(user: User) {
+    this.selectedUser.emit(user);
+  }
 
 }

@@ -8,4 +8,5 @@
 .layout{
   background-color: rgb(233, 191, 141);
   padding: 20px;
+  display: grid;
 }
