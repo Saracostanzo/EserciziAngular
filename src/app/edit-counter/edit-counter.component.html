@@ -1,0 +1,15 @@
+<form #f="ngForm" (ngSubmit)="submit(f)" class="row g-3">
+<div class="w-100">
+  <label for="inputNumber6" class="input-number-label">€
+    <input type="number" id="inputNumber6" name="inputNumber6" value="0" step="any" ngModel>
+  </label>
+  <span class="input-number input-number-adaptive">
+    <button class="input-numbers"(click)="addNewValue(f)">
+      <span class="sr-only">Deposita</span>
+    </button>
+    <button class="input-numbers"(click)="removeValue(f)">
+      <span class="sr-only">Preleva</span>
+    </button>
+  </span>
+</div>
+</form>
