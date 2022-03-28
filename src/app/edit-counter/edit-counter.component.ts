@@ -1,5 +1,6 @@
 import { Component, OnInit, } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { AppService } from '../app.service.module';
 
 @Component({
@@ -8,28 +9,19 @@ import { AppService } from '../app.service.module';
   styleUrls: ['./edit-counter.component.css']
 })
 export class EditCounterComponent implements OnInit {
-  counter$!:any;
-  count!:any;
+
+  val!:number
   constructor(private appService: AppService) { }
-  ngOnInit(): void {
-    this.appService.pimoval()
-    this.counter$= this.appService.counter$.subscribe(value=> this.count=value)
-  }
 
-  submit(form: NgForm) {
-    console.log(this.count)
-    console.log(form.value.inputNumber6)
-};
+  ngOnInit(): void {}
 
-  addNewValue(form:NgForm) {
-    this.count= this.count + form.value.inputNumber6;
-    this.appService.update(this.count)
-  }
-  removeValue(form:NgForm){
-    if(this.count>=form.value.inputNumber6){
-    this.count = this.count - form.value.inputNumber6;
-    this.appService.update(this.count)
-    }else alert(" Operazione non consentita ! Il tuo saldo non può andare in negativo !")
-  }
 
+  addNewValue(form: NgForm) {
+    this.val=form.value.inputNumber6;
+    this.appService.add(this.val)
+  }
+  removeValue(form: NgForm){
+    this.val=form.value.inputNumber6;
+    this.appService.remove(this.val)
+}
 }
