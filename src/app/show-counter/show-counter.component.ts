@@ -13,6 +13,7 @@ export class ShowCounterComponent implements OnInit {
   constructor(public appservice:AppService) { }
 
   ngOnInit(): void {
+this.count$=this.appservice.getAll()
   }
 
 }
