@@ -8,13 +8,16 @@ import { AppService } from '../app.service.module';
   styleUrls: ['./edit-counter.component.css']
 })
 export class EditCounterComponent implements OnInit {
-  count!:number
+  counter$!:any;
+  count!:any;
   constructor(private appService: AppService) { }
-
   ngOnInit(): void {
-   this.count= this.appService.counter$.value
+    this.appService.pimoval()
+    this.counter$= this.appService.counter$.subscribe(value=> this.count=value)
   }
+
   submit(form: NgForm) {
+    console.log(this.count)
     console.log(form.value.inputNumber6)
 };
 

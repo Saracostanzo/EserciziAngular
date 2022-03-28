@@ -10,7 +10,7 @@ import { AppService } from '../app.service.module';
 export class ShowCounterComponent implements OnInit {
  count$!: Observable<number>;
 
-  constructor(public appservice:AppService) { }
+  constructor(public appService:AppService) { }
 
   ngOnInit(): void {
   }
