@@ -2,7 +2,7 @@
   <div class="layout" *ngIf="users$ | async as users; else loading">
     <h5 class="interfacciaU">Interfaccia Ordini</h5>
     <esercizi-order-list
-      *ngIf="orders.length > 0; else noProjects"
+      *ngIf="orders.length > 0; else noOrder"
       [orders]="orders"
       [users]="users"
       (selectedUser)="selectUser($event)"
@@ -15,6 +15,6 @@
   <h1>Loading...</h1>
 </ng-template>
 
-<ng-template #noProjects>
-  <p>Non è presente nessun progetto</p>
+<ng-template #noOrder>
+  <p>Non sono presenti ordini</p>
 </ng-template>

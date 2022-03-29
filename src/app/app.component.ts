@@ -8,16 +8,5 @@ import { User } from './models/user';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  titles:TitleObj[]=[
-    {
-  titolo:"Ordine"
-    },
-    {
-  titolo:"Ordine"
-    },
-    {
-  titolo:"Ordine"
-    }
-  ]
 
 }
