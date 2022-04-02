@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ShowCounterComponent } from './show-counter/show-counter.component';
-import { EditCounterComponent } from './edit-counter/edit-counter.component';
+import { EditCounterComponent } from './show-counter/edit-counter/edit-counter.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({

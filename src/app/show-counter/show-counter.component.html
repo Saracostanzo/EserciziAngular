@@ -1,5 +1,6 @@
 <div class="container">
 <h2>SALDO</h2>
-<h2>€ {{ this.appService.getAll()| async}}</h2>
->>>>>>> esercizio9
+<h2>€ {{ this.appService.getAll(this.count)| async}}</h2>
+
 </div>
+<esercizi-edit-counter (AddValue)="add($event)" (RemoveValue)="remove($event)"></esercizi-edit-counter>

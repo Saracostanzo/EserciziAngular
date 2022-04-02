@@ -1,7 +1,7 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { AppService } from '../app.service.module';
+import { AppService } from '../../app.service.module';
 
 @Component({
   selector: 'esercizi-edit-counter',
@@ -9,19 +9,23 @@ import { AppService } from '../app.service.module';
   styleUrls: ['./edit-counter.component.css']
 })
 export class EditCounterComponent implements OnInit {
+  @Output() AddValue = new EventEmitter<number>();
+  @Output() RemoveValue = new EventEmitter<number>();
 
   val!:number
-  constructor(private appService: AppService) { }
+  constructor() { }
 
   ngOnInit(): void {}
 
 
   addNewValue(form: NgForm) {
     this.val=form.value.inputNumber6;
-    this.appService.add(this.val)
+    this.AddValue.emit(this.val)
   }
+
   removeValue(form: NgForm){
     this.val=form.value.inputNumber6;
-    this.appService.remove(this.val)
+    this.RemoveValue.emit(this.val)
 }
+
 }
