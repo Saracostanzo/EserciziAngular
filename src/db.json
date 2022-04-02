@@ -1,0 +1,70 @@
+
+{"beer": [
+  {
+ "id": 1,
+"type": "small",
+"name": "Reale Extra",
+"price": 5
+  },
+  {
+"id": 2,
+"type": "medium",
+"name": "Blanche de Valerie",
+"price": 10
+  },
+  {
+"id": 3,
+"type": "small",
+"name": "Viaemilia",
+"price": 5
+  },
+  {
+"id": 3,
+"type": "medium",
+"name": "Haraban",
+"price": 10
+  },
+  {
+ "id": 4,
+"type": "small",
+"name": "Triple",
+"price": 5
+  },
+  {
+"id": 5,
+"type": "medium",
+"name": "Tipopils",
+"price": 10
+  },
+  {
+"id": 6,
+"type": "small",
+"name": "Zona Cesarini",
+"price": 5
+  },
+  {
+    "id": 7,
+"type": "medium",
+"name": "Quarta Runa",
+"price": 10
+  },
+  {
+"id": 8,
+"type": "small",
+"name": "Zest",
+"price": 5
+  },
+  {
+"id": 9,
+"type": "medium",
+"name": "Spaceman ",
+"price": 10
+  },
+  {
+"id":10,
+"type": "small",
+"name": "Westvleteren",
+"price": 5
+  }
+]
+}
