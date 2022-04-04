@@ -8,7 +8,7 @@ import { ShopComponent } from './shop/shop.component';
 const routes: Routes = [
   {path: 'home', component: AppComponent},
   { path: 'shop', component: ShopComponent },
-  {path: 'detail/:id',component: DetailBeerComponent, },
+  {path: 'shop/detail/:id',component: DetailBeerComponent, },
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: '**',   redirectTo: '/home' }
 

@@ -16,9 +16,9 @@ export class DetailBeerComponent implements OnInit {
   constructor(private route: ActivatedRoute, private appService: AppService) { }
 
   ngOnInit() {
-    this.beer$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => this.appService.get(+params.get('id')!))
-    );
+    // this.beer$ = this.route.paramMap.pipe(
+    //   switchMap((params: ParamMap) => this.appService.get(+params.get('id')!))
+    // );
   }
 
   submit(project: Beer) {

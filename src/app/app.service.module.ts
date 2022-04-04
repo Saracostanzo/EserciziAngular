@@ -78,19 +78,22 @@ export class AppService {
     }
   ];
 
-  private projectsSubject = new BehaviorSubject<Beer[]>(this.beer);
-  public projects$ = this.projectsSubject.asObservable();
+  private beersSubject = new BehaviorSubject<Beer[]>(this.beer);
+  public beers$ = this.beersSubject.asObservable();
 
   constructor(private logService: LogService,) { }
 
   getAll() {
-    return this.projects$.pipe(
+    return this.beers$.pipe(
       retry(3),
       tap(() => this.logService.log(' GetAll Eseguito'))
     );
   }
   get(id: number): Beer {
   this.logService.log("get id iseguito");
+  if(this.beer[id].type==="small"){
+    this.beer[id].price = 5
+  }else this.beer[id].price = 10
   return this.beer.find(beer => beer.id ===id) as Beer;
   }
 

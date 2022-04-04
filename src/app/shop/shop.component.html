@@ -1,17 +1,18 @@
-<form class="layout"*ngFor="let beer of beers">
+<form class="layout">
   <div class="select-wrapper">
     <label for="defaultSelect">Etichetta</label>
     <select id="defaultSelect" required >
       <option selected="" value="">Scegli un'opzione</option>
-      <option value="Value 1">{{beer.name}}</option>
+      <option value="Value 1"*ngFor="let beer of beers" (click)="select(beer)">{{beer.name}} </option>
     </select>
   </div>
   <div class="select-wrapper">
     <label for="defaultSelect">Etichetta</label>
     <select id="defaultSelect" required>
       <option selected="" value="">Scegli un'opzione</option>
-      <option value="Value 1">{{beer.type}}</option>
+      <option value="Value 1">{{beers[0].type}}</option>
+      <option value="Value 1">{{beers[1].type}}</option>
     </select>
   </div>
-  <button type="submit" class="btn btn-primary" (click)="select(beer)">Sign in</button>
+  <button type="submit" class="btn btn-primary"routerLink="shop/detail/:id">Sign in</button>
 </form>

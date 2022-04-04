@@ -1,4 +1,5 @@
-<esercizi-shop *ngIf="(projects$ | async) as projects; else loading"
+<esercizi-shop *ngIf="(beers$ | async) as beers; else loading"
+[beers]="beers"
 (selectedBeer)="selectBeer($event)">
 
 </esercizi-shop>

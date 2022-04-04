@@ -10,17 +10,17 @@ import { Beer } from './model/beer';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  projects$!: Observable<Beer[]>;
+  beers$!: Observable<Beer[]>;
 
   selectedBeer!: Beer;
 
   constructor(private appService: AppService, private router: Router) { }
 
   ngOnInit() {
-      this.projects$ = this.appService.getAll();
+      this.beers$ = this.appService.getAll();
   }
 
   selectBeer(project: Beer) {
-    this.router.navigate(['/projects', 'detail', project.id]);
+    this.router.navigate(['/shop', 'detail', project.id]);
   }
 }
