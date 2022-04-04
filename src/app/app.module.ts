@@ -6,6 +6,7 @@ import { ShopComponent } from './shop/shop.component';
 import { CardBeerComponent } from './card-beer/card-beer.component';
 import { DetailBeerComponent } from './detail-beer/detail-beer.component';
 import { AppRoutingModule } from './app.rotuing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AppRoutingModule } from './app.rotuing.module';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
 
   ],

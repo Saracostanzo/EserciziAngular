@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AppService } from '../app.service.module';
@@ -12,13 +13,25 @@ import { Beer } from '../model/beer';
 export class ShopComponent implements OnInit {
   @Input() beers: Beer[] = [];
   @Output() selectedBeer = new EventEmitter<Beer>();
-
-  constructor() { }
+   type!:any
+   beerCard!:Beer;
+  constructor( private appService:AppService) { }
 
   ngOnInit() {
   }
-
-  select(beer: Beer) {
-    this.selectedBeer.emit(beer);
+  addSmall(form: NgForm) {
+    this.type=form.value.small;
   }
+  addMedium(form:NgForm){
+    this.type=form.value.medium;
+  }
+selectCard(beer:Beer){
+this.beerCard=beer;
+}
+  select(beers:any) {
+    beers=this.beerCard;
+    beers.type= this.type;
+    this.selectedBeer.emit(beers);
+  }
+
 }
