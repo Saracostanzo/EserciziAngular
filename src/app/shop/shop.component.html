@@ -1,4 +1,4 @@
-<form class="layout">
+<form #f="ngForm" class="layout">
   <div class="select-wrapper">
     <label for="defaultSelect">Etichetta</label>
     <select id="defaultSelect" required >
@@ -10,9 +10,9 @@
     <label for="defaultSelect">Etichetta</label>
     <select id="defaultSelect" required>
       <option selected="" value="">Scegli un'opzione</option>
-      <option value="Value 1">{{beers[0].type}}</option>
-      <option value="Value 1">{{beers[1].type}}</option>
+      <option  name ="small" value="Value 1" ngModel (click)="addSmall(f)">small</option>
+      <option name ="medium" value="Value 1"ngModel (click)="addMedium(f)">medium</option>
     </select>
   </div>
-  <button type="submit" class="btn btn-primary"routerLink="shop/detail/:id">Sign in</button>
+  <button type="submit" class="btn btn-primary"(click)="submit(f)">Sign in</button>
 </form>
