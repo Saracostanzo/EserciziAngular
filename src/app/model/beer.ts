@@ -1,3 +1,4 @@
+
 export interface Beer {
   id: number,
   type: "small" | "medium",

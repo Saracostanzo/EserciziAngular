@@ -1,0 +1,17 @@
+<form class="layout"*ngFor="let beer of beers">
+  <div class="select-wrapper">
+    <label for="defaultSelect">Etichetta</label>
+    <select id="defaultSelect" required >
+      <option selected="" value="">Scegli un'opzione</option>
+      <option value="Value 1">{{beer.name}}</option>
+    </select>
+  </div>
+  <div class="select-wrapper">
+    <label for="defaultSelect">Etichetta</label>
+    <select id="defaultSelect" required>
+      <option selected="" value="">Scegli un'opzione</option>
+      <option value="Value 1">{{beer.type}}</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="select(beer)">Sign in</button>
+</form>

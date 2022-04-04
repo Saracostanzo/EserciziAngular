@@ -86,7 +86,7 @@ export class AppService {
   getAll() {
     return this.projects$.pipe(
       retry(3),
-      tap(() => this.logService.log('HttpClient GetAll'))
+      tap(() => this.logService.log(' GetAll Eseguito'))
     );
   }
   get(id: number): Beer {
