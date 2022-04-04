@@ -20,7 +20,7 @@ export class AppComponent {
       this.beers$ = this.appService.getAll();
   }
 
-  selectBeer(project: Beer) {
-    this.router.navigate(['/shop', 'detail', project.id]);
+  selectBeer(beer: Beer) {
+    this.router.navigate(['/shop', 'detail', beer.id]);
   }
 }
