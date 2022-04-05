@@ -1,18 +1,37 @@
-<form #f="ngForm" class="layout">
-  <div class="select-wrapper">
-    <label for="defaultSelect">Etichetta</label>
-    <select id="defaultSelect" required >
-      <option selected="" value="">Scegli un'opzione</option>
-      <option value="Value 1"*ngFor="let beer of beers" (click)="selectCard(beer)">{{beer.name}} </option>
+<form #f="ngForm" class="layout"(ngSubmit)="submit(f)"*ngIf="(beers$ | async) as beers; else loading">
+  <div class="col-md-4">
+    <label for="Id" class="form-label">Nome Birra</label>
+    <select class="form-select" name="Id" required ngModel #priorityField="ngModel">
+      <option value="{{beer.id}}"*ngFor="let beer of beers">{{beer.name}}</option>
     </select>
+    <p class="text-danger" *ngIf="priorityField.invalid && priorityField.touched"><small>Il campo è richiesto</small></p>
   </div>
-  <div class="select-wrapper">
-    <label for="defaultSelect">Etichetta</label>
-    <select id="defaultSelect" required>
-      <option selected="" value="">Scegli un'opzione</option>
-      <option  name ="small" value="Value 1" ngModel (click)="addSmall(f)">small</option>
-      <option name ="medium" value="Value 1"ngModel (click)="addMedium(f)">medium</option>
+  <div class="col-md-4">
+    <label for="Type" class="form-label">Misura</label>
+    <select class="form-select" name="Type" required ngModel #priorityField="ngModel">
+      <option value="small">small</option>
+      <option value="medium">medium</option>
     </select>
+    <p class="text-danger" *ngIf="priorityField.invalid && priorityField.touched"><small>Il campo è richiesto</small></p>
   </div>
-  <button type="submit" class="btn btn-primary"(click)="select(beers)">Sign in</button>
+ <button type="submit" class="btn btn-primary" >Sign in</button>
 </form>
+<ng-container *ngIf="this.selectedBeer>=0">
+  <div class="container-fluid py-5">
+    <esercizi-card-beer>
+      <ng-container data-body>
+        <h1 class="display-5 fw-bold">Birra Selezionata:  {{input.name}}</h1>
+        <p class="col-md-8 fs-4"> Grandezza:   {{input.type}}</p>
+      </ng-container>
+      <ng-container data-footer>
+        <p>
+          <span> Prezzo: {{input.price}}€ </span>
+        </p>
+      </ng-container>
+    </esercizi-card-beer>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <h1>Loading...</h1>
+</ng-template>

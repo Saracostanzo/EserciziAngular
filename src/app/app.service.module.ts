@@ -11,19 +11,19 @@ import { LogService } from './log.service';
 export class AppService {
   beer: Beer[] = [
     {
-      id: 1,
+      id: 0,
   type: 'small',
   name: "Reale Extra",
   price: 5
     },
     {
-      id: 2,
+      id: 1,
   type: "medium",
   name: "Blanche de Valerie",
   price: 10
     },
     {
-      id: 3,
+      id: 2,
   type: "small",
   name: "Viaemilia",
   price: 5
@@ -70,12 +70,6 @@ export class AppService {
   name: "Spaceman ",
   price: 10
     },
-    {
-      id:10,
-  type: "small",
-  name: "Westvleteren",
-  price: 5
-    }
   ];
 
   private beersSubject = new BehaviorSubject<Beer[]>(this.beer);
@@ -89,12 +83,12 @@ export class AppService {
       tap(() => this.logService.log(' GetAll Eseguito'))
     );
   }
-  get(id: number): Beer {
-  this.logService.log("get id iseguito");
-  if(this.beer[id].type==="small"){
-    this.beer[id].price = 5
-  }else this.beer[id].price = 10
-  return this.beer.find(beer => beer.id ===id) as Beer;
+  get(id: number , type:'small' |'medium'): Beer {
+  this.beer[id].type= type
+  if(this.beer[id].type==="medium"){
+    this.beer[id].price=10
+  }else this.beer[id].price = 5
+  return this.beer[id]
   }
 
 }

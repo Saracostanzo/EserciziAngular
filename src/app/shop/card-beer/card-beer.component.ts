@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Beer } from '../model/beer';
+import { Beer } from '../../model/beer';
 
 @Component({
   selector: 'esercizi-card-beer',

@@ -11,27 +11,22 @@ import { Beer } from '../model/beer';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
+  beers$!: Observable<Beer[]>
   @Input() beers: Beer[] = [];
-  @Output() selectedBeer = new EventEmitter<Beer>();
-   type!:any
-   beerCard!:Beer;
-  constructor( private appService:AppService) { }
+  selectedBeer!:number;
+  selectedType!:any;
+  input!:Beer;
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
+      this.beers$ = this.appService.getAll();
   }
-  addSmall(form: NgForm) {
-    this.type=form.value.small;
-  }
-  addMedium(form:NgForm){
-    this.type=form.value.medium;
-  }
-selectCard(beer:Beer){
-this.beerCard=beer;
+  submit(form: NgForm) {
+    this.selectedBeer=form.value.Id
+    this.selectedType=form.value.Type
+    console.log(this.selectedBeer, this.selectedType)
+    this.input= this.appService.get(this.selectedBeer, this.selectedType)
+    console.log(this.input)
 }
-  select(beers:any) {
-    beers=this.beerCard;
-    beers.type= this.type;
-    this.selectedBeer.emit(beers);
-  }
 
 }
