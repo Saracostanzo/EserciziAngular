@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AppService } from './app.service.module';
+import { CountriesRoute } from './model/countriesRoute';
 
 @Component({
   selector: 'esercizi-root',
@@ -6,5 +9,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'esercizi';
+
+  keysName!:any;
+  keysNum!:number;
+  endPoints!:Array<any>;
+  constructor(private appService: AppService) { }
+
+  ngOnInit() {
+     this.appService.getAll().subscribe((data)=>{
+      this.keysName=Object.keys(data)
+      this.keysNum=this.keysName.length
+      this.endPoints=(Object.values(data))
+     });
+
+
+  }
+
 }
