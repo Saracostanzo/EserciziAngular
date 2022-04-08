@@ -1,0 +1,53 @@
+<div class="container">
+  <h2 class="text-center">Joke App</h2>
+  <div class="wrap1 mt-4">
+    <h3>Joke Attuale</h3>
+    <p>
+      <b>{{ data?.set }}</b>
+    </p>
+    <p>
+      <b>{{ data?.dev }}</b>
+    </p>
+    <div>
+      <button (click)="saveLike(data)" class="btn btn-success">Like</button>
+      <button (click)="saveDisLike(data)" class="btn btn-danger">
+        Dislike
+      </button>
+    </div>
+  </div>
+  <div class="wrap2 mt-4">
+    <h3 class="text-center">Joke Piaciuti</h3>
+    <div *ngIf="like">
+      <p *ngFor="let s of like; let i = index">
+        <span class="index">{{ i + 1 }}</span>
+        <b>{{ s?.set }}</b>
+        <span>
+          {{ s?.dev }}
+        </span>
+      </p>
+    </div>
+    <button
+      (click)="moveToDislike()"
+      class="btn btn-danger"
+    >
+      Dislike
+    </button>
+  </div>
+  <div class="wrap3 mt-4">
+    <h3 class="text-center">Joke Non Piaciuti</h3>
+    <div *ngIf="dislike">
+      <p *ngFor="let sd of dislike; let i = index">
+        <span class="index">{{ i + 1 }}</span>
+        <b>{{ sd?.set }}</b>
+        <span>{{ sd?.dev }}</span>
+      </p>
+    </div>
+    <button
+      (click)="moveToLike()"
+      class="btn btn-success"
+    >
+      Like
+    </button>
+  </div>
+</div>
+
