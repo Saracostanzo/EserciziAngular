@@ -1,0 +1,46 @@
+<ng-container>
+  <esercizi-navbar>
+    <ng-container data-body>
+      <a class="navbar-brand" href="#">Genderize</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </ng-container>
+    <ng-container data-footer>
+
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="form-inline my-2 my-lg-0">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="removeAll()">Cancella Ricerche</button>
+        </form>
+      </div>
+    </ng-container>
+  </esercizi-navbar>
+</ng-container>
+<form #f="ngForm">
+  <div class="info-input-search">
+    <input placeholder="Inserire Nome" name="filter" scale="md" class="input-search__input " required="" value=""ngModel >
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"(click)="addNewValue(f)">Ricerca</button>
+  </div>
+  </form>
+<ng-container *ngIf="iters">
+
+  <esercizi-card>
+    <ng-container data-body>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Probabilità</th>
+        <th scope="col">Count</th>
+      </tr>
+    </ng-container>
+    <ng-container data-footer>
+      <tr *ngFor="let gender of array">
+        <th scope="row">{{gender.name}}</th>
+        <td>{{gender.gender}}</td>
+        <td>{{gender.probability}}</td>
+        <td>{{gender.count}}</td>
+      </tr>
+    </ng-container>
+  </esercizi-card>
+</ng-container>
